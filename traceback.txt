@@ -1,0 +1,20 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+WindowsError: [Error 32] Процесс не может получить доступ к файлу,
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\main.py", line 469, in main
+    renpy.dump.dump(False)
+  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\dump.py", line 255, in dump
+    os.rename(new, args.json_dump)
+WindowsError: [Error 32] Процесс не может получить доступ к файлу,
+
+Windows-8-6.2.9200
+Ren'Py 7.1.3.1092
+1444.Demo 1.0
+Sun Aug 02 19:42:50 2020

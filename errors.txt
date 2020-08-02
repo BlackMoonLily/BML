@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 507: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "Похоже, вам нечего на это ответить, и по вашему взгляду Эрену и так все стало понятно. Только тихо покачав головой, он поправил лямку кобуры и молча направился обратно к компании.""
+
+Ren'Py Version: Ren'Py 7.1.3.1092
+Sun Aug 02 03:36:42 2020
