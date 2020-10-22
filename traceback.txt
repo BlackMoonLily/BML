@@ -1,20 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-WindowsError: [Error 32] Процесс не может получить доступ к файлу,
+While running game code:
+  File "game/script.rpy", line 197, in script
+    "Вы мягко ему улыбнулись."
+  File "game/script.rpy", line 197, in <module>
+    "Вы мягко ему улыбнулись."
+NameError: name 'Parki' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\main.py", line 469, in main
-    renpy.dump.dump(False)
-  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\dump.py", line 255, in dump
-    os.rename(new, args.json_dump)
-WindowsError: [Error 32] Процесс не может получить доступ к файлу,
+  File "game/script.rpy", line 197, in script
+    "Вы мягко ему улыбнулись."
+  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\ast.py", line 881, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Пользователь\Desktop\leon\renpy-7.1.3-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 197, in <module>
+    "Вы мягко ему улыбнулись."
+NameError: name 'Parki' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.3.1092
 1444.Demo 1.0
-Sun Aug 02 19:42:50 2020
+Wed Oct 21 00:36:51 2020

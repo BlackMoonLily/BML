@@ -114,7 +114,7 @@ screen say(who, what):
     ## По стандарту не показывается на варианте для мобильных устройств — мало
     ## места.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.5 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 ## Делает namebox доступным для стилизации через объект Character.

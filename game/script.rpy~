@@ -44,6 +44,22 @@ init:
     $ timer_jump = 0
 
 # Вместо использования оператора image можете просто
+
+label qte_setup(time_start, time_max, interval, trigger_key, x_align, y_align):
+
+    $ time_start = time_start
+    $ time_max = time_max
+    $ interval = interval
+    $ trigger_key = trigger_key
+    $ x_align = x_align
+    $ y_align = y_align
+
+    call screen qte_simple
+    # can change to call screen qte_button to switch to button mode
+
+    $ cont = _return
+    # 1 if key was hit in time, 0 if key not
+
 # складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png",
 # а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
@@ -559,12 +575,36 @@ label menu2:
         return
 
     else:
-        "Джамп."
+        "Джамп-джамп дальше по сценарию.."
+
+    scene expression "#B4CDD4"
+    scene black with circleirisin
+    "Нажимайте кнопки клавиатуры (понадобится англ.раскладка), которые будут показаны на экране."
+    #$ res = renpy.call_screen("scr_qte", word="ASWADSWADSDWAS", time=10.0, _layer="master")
+    $ res = renpy.call_screen("scr_qte", time=8.0, length=15, _layer="master")
+    #$ res = renpy.call_screen("scr_qte", _layer="master")
+    if res:
+        centered "{size=72}Победа!"
+    else:
+        centered "{size=72}Поражение..."
 
     if Eren == 0:
         "ЭРЕННОЛЬ: Ну ты однако мда.."
     else:
         п "А ты не так уж плох."
+
+    #$ cont = 0 #continue variable
+    #$ arr_keys = ["a", "s", "d", "e", "K_SPACE"] #list of keyboard inputs to be selected from. See https://www.pygame.org/docs/ref/key.html for more keys
+
+    #call qte_setup(0.9, 0.9, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+    # "Function Call" - see label qte_setup for detail on "function"
+    # in the above, I randomly select a key from a previously defined set of keys (arr_keys), and randomise the location
+
+    #while cont == 1:
+        #call qte_setup(0.9, 0.9, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+        # to repeat the qte events until it is missed
+
+   # "{b}GAME OVER{/b}"
 
     label loop_start:
     е "О нет! Это выглядит так, словно мы попали в ловушку бесконечного цикла."
